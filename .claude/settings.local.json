@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/xinyuewang/Desktop/website/cindywang)",
+      "Bash(mv /Users/xinyuewang/Desktop/cindywang/index.html /Users/xinyuewang/Desktop/cindywang/css /Users/xinyuewang/Desktop/cindywang/js /Users/xinyuewang/Desktop/website/cindywang/)",
+      "Bash(rmdir /Users/xinyuewang/Desktop/cindywang)"
+    ]
+  }
+}

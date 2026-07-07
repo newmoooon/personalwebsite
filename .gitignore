@@ -2,3 +2,4 @@ node_modules/
 cindywang/dist/
 .DS_Store
 *.log
+.gstack/

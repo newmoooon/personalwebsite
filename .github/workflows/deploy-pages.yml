@@ -27,10 +27,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
           cache-dependency-path: cindywang/package-lock.json
-      - run: npm ci
+      # npm install (not ci): the committed lockfile is generated on macOS and
+      # omits Linux-only optional deps (@emnapi/*); install adds them at runtime.
+      - run: npm install --no-audit --no-fund
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

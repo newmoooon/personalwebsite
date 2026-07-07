@@ -1,7 +1,16 @@
 import SplitText from './SplitText'
 
-const LANGUAGES = ['Python', 'C', 'Java', 'SQL', 'JavaScript', 'TypeScript', 'Assembly', 'R', 'Ruby']
-const TOOLS = ['Git', 'Docker', 'React', 'Node.js', 'Flask', 'Rails', 'Redis', 'MongoDB', 'GitHub Actions', 'Figma']
+const LANGUAGES = ['Python', 'C', 'Java', 'SQL', 'JavaScript', 'TypeScript', 'Dart', 'HTML/CSS', 'Assembly', 'R', 'Ruby']
+const TOOLS = ['Git', 'Docker', 'React', 'Node.js', 'FastAPI', 'Flask', 'Flutter', 'Rails', 'Redis', 'Supabase', 'MongoDB', 'Cloudflare', 'GitHub Actions', 'Figma', 'LaTeX']
+const COURSEWORK = [
+  'Computer Systems',
+  'Imperative Computation',
+  'Database Development',
+  'Artificial Intelligence',
+  'Foundations of Software Engineering',
+  'Application Development',
+  'Functional Programming',
+]
 
 export default function About() {
   return (
@@ -46,6 +55,13 @@ export default function About() {
                 B.S. Computer Science &amp; Information Systems
               </p>
               <p className="mono muted small">Pittsburgh, PA · 2023 – 2027</p>
+            </div>
+
+            <div className="side-block">
+              <p className="mono muted small">coursework</p>
+              <ul className="pill-list small">
+                {COURSEWORK.map(x => <li key={x}>{x}</li>)}
+              </ul>
             </div>
 
             <div className="side-block">

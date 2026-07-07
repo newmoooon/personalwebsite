@@ -5,6 +5,7 @@ const LINKS = [
   { href: 'mailto:xyw721@gmail.com', label: 'email', val: 'xyw721@gmail.com' },
   { href: 'https://www.linkedin.com/in/xinyuewangcindy', label: 'linkedin', val: '/in/xinyuewangcindy' },
   { href: 'https://github.com/xinyuewang', label: 'github', val: '/xinyuewang' },
+  { href: '/resume.pdf', label: 'resume', val: 'one-page pdf' },
 ]
 
 const MARQUEE = "let's build something ✦ "

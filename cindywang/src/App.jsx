@@ -12,8 +12,8 @@ import { initLenis, destroyLenis, pauseLenis } from './lib/scroll'
 const SECTIONS = [
   { id: 'home', label: 'index' },
   { id: 'about', label: 'about' },
-  { id: 'experience', label: 'work' },
   { id: 'projects', label: 'projects' },
+  { id: 'experience', label: 'work' },
   { id: 'contact', label: 'contact' },
 ]
 
@@ -101,8 +101,8 @@ export default function App() {
           </div>
         </div>
         <About />
-        <Experience />
         <Projects />
+        <Experience />
         <Contact />
       </main>
       <footer className="footer">

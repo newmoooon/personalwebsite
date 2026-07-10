@@ -23,8 +23,9 @@ export default function Contact() {
 
         <div className="contact-wrap reveal">
           <p className="contact-lede">
-            I&rsquo;m open to summer 2027 internships, research, and interesting
-            problems. The inbox is always open — I usually reply within a day.
+            I&rsquo;m open to fall 2026 and summer 2027 internships, research,
+            and interesting problems. The inbox is always open — I usually reply
+            within a day.
           </p>
 
           <a href="mailto:xinyuew4@andrew.cmu.edu" className="contact-email">

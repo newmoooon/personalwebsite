@@ -80,7 +80,7 @@ export default function FolderIntro({ onDone }) {
             {/* pages — fan out left / right / center */}
             <div className="fi-page fi-page-left mono">
               <span className="fi-page-tag">01 — about</span>
-              <span className="fi-page-line">cmu cs &amp; is &apos;27</span>
+              <span className="fi-page-line">cmu cs &amp; is &apos;28</span>
               <span className="fi-page-line">systems · ai · security</span>
             </div>
             <div className="fi-page fi-page-right mono">

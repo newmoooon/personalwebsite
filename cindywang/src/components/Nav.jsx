@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Scramble from './Scramble'
 import { scrollToEl } from '../lib/scroll'
 
 export default function Nav({ sections, active }) {
@@ -33,7 +32,7 @@ export default function Nav({ sections, active }) {
                 <span className="nav-tab-num">
                   {String(sections.indexOf(s) + 1).padStart(2, '0')}
                 </span>
-                <Scramble text={s.label} />
+                <span>{s.label}</span>
               </button>
             </li>
           ))}

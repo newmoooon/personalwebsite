@@ -11,19 +11,10 @@ import { initLenis, destroyLenis, pauseLenis } from './lib/scroll'
 
 const SECTIONS = [
   { id: 'home', label: 'index' },
-  { id: 'about', label: 'about' },
-  { id: 'projects', label: 'projects' },
   { id: 'experience', label: 'work' },
+  { id: 'projects', label: 'projects' },
+  { id: 'about', label: 'about' },
   { id: 'contact', label: 'contact' },
-]
-
-const TICKER = [
-  'software engineer',
-  'systems',
-  'ai',
-  'security',
-  'currently @ cmu',
-  'summer 2026',
 ]
 
 function useClock() {
@@ -88,21 +79,9 @@ export default function App() {
       <Nav sections={SECTIONS} active={active} />
       <main>
         <Hero />
-        <div className="ticker" aria-hidden="true">
-          <div className="ticker-track">
-            {[...Array(3)].flatMap((_, k) =>
-              TICKER.map((t, i) => (
-                <span key={`${k}-${i}`} className="ticker-item">
-                  <span className="ticker-star">✦</span>
-                  <span>{t}</span>
-                </span>
-              ))
-            )}
-          </div>
-        </div>
-        <About />
-        <Projects />
         <Experience />
+        <Projects />
+        <About />
         <Contact />
       </main>
       <footer className="footer">
@@ -111,7 +90,6 @@ export default function App() {
           <span className="mono muted footer-clock">
             <span className="dot small" /> PGH, PA — {time}
           </span>
-          <span className="mono muted">designed &amp; built from scratch</span>
         </div>
       </footer>
     </>

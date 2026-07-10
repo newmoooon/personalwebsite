@@ -1,26 +1,15 @@
 import SplitText from './SplitText'
-import Scramble from './Scramble'
 
 const LINKS = [
-  { href: 'mailto:xyw721@gmail.com', label: 'email', val: 'xyw721@gmail.com' },
+  { href: 'mailto:xinyuew4@andrew.cmu.edu', label: 'email', val: 'xinyuew4@andrew.cmu.edu' },
   { href: 'https://www.linkedin.com/in/xinyuewangcindy', label: 'linkedin', val: '/in/xinyuewangcindy' },
-  { href: 'https://github.com/xinyuewang', label: 'github', val: '/xinyuewang' },
-  { href: '/resume.pdf', label: 'resume', val: 'one-page pdf' },
+  { href: 'https://github.com/newmoooon', label: 'github', val: '/newmoooon' },
+  { href: `${import.meta.env.BASE_URL}resume.pdf`, label: 'resume', val: 'one-page pdf' },
 ]
-
-const MARQUEE = "let's build something ✦ "
 
 export default function Contact() {
   return (
     <section id="contact" className="section contact">
-      <div className="big-marquee" aria-hidden="true">
-        <div className="big-marquee-track serif italic">
-          {[...Array(4)].map((_, i) => (
-            <span key={i}>{MARQUEE}</span>
-          ))}
-        </div>
-      </div>
-
       <div className="section-inner">
         <header className="section-head reveal reveal-chars">
           <span className="mono muted section-num">04 —</span>
@@ -34,14 +23,14 @@ export default function Contact() {
 
         <div className="contact-wrap reveal">
           <p className="contact-lede">
-            I&rsquo;m open to internships, research, and interesting problems.
-            The inbox is always open — I usually reply within a day.
+            I&rsquo;m open to summer 2027 internships, research, and interesting
+            problems. The inbox is always open — I usually reply within a day.
           </p>
 
-          <a href="mailto:xyw721@gmail.com" className="contact-email">
+          <a href="mailto:xinyuew4@andrew.cmu.edu" className="contact-email">
             <span className="mono muted small">write to</span>
             <span className="contact-email-val">
-              xyw721@gmail.com
+              xinyuew4@andrew.cmu.edu
               <span className="arrow">→</span>
             </span>
           </a>
@@ -50,7 +39,7 @@ export default function Contact() {
             {LINKS.map(l => (
               <li key={l.label}>
                 <a href={l.href} target="_blank" rel="noreferrer">
-                  <Scramble className="muted" text={l.label} />
+                  <span className="muted">{l.label}</span>
                   <span>{l.val}</span>
                   <span className="arrow">↗</span>
                 </a>

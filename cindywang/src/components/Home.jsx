@@ -1,7 +1,5 @@
 import { useEffect, useRef } from 'react'
 import SplitText from './SplitText'
-import ParticleField from './ParticleField'
-import ParticleMorph from './ParticleMorph'
 import { scrollToEl } from '../lib/scroll'
 
 export default function Hero() {
@@ -9,18 +7,6 @@ export default function Hero() {
   const innerRef = useRef(null)
   const hintRef = useRef(null)
   const btnRef = useRef(null)
-
-  useEffect(() => {
-    const el = heroRef.current
-    if (!el) return
-    const move = e => {
-      const r = el.getBoundingClientRect()
-      el.style.setProperty('--mx', `${e.clientX - r.left}px`)
-      el.style.setProperty('--my', `${e.clientY - r.top}px`)
-    }
-    el.addEventListener('mousemove', move)
-    return () => el.removeEventListener('mousemove', move)
-  }, [])
 
   // parallax: hero content drifts up and fades as you scroll past it
   useEffect(() => {
@@ -86,48 +72,50 @@ export default function Hero() {
 
   return (
     <section id="home" className="section hero" ref={heroRef}>
-      <ParticleMorph />
-      <ParticleField />
-      <div className="spotlight" aria-hidden="true" />
+      <div className="blobs" aria-hidden="true">
+        <span className="blob blob-1" />
+        <span className="blob blob-2" />
+        <span className="blob blob-3" />
+      </div>
       <div className="hero-grid" aria-hidden="true" />
 
       <div className="section-inner hero-inner" ref={innerRef}>
         <p className="mono muted stagger available">
-          <span className="dot small" /> available — summer 2026
+          <span className="dot small" /> available — fall 2026, summer 2027
         </p>
 
         <h1 className="hero-title reveal reveal-chars is-visible">
-          <span className="line">
-            <SplitText delayStep={28} baseDelay={200}>Xinyue</SplitText>
-          </span>
-          <span className="line accent-word">
-            <SplitText className="display" delayStep={40} baseDelay={520}>Cindy</SplitText>
-          </span>
-          <span className="line">
-            <SplitText delayStep={28} baseDelay={860}>Wang.</SplitText>
-          </span>
+          <SplitText delayStep={16} baseDelay={60}>Xinyue</SplitText>{' '}
+          <span className="accent-word">
+            <SplitText className="display" delayStep={18} baseDelay={200}>Cindy</SplitText>
+          </span>{' '}
+          <SplitText delayStep={16} baseDelay={340}>Wang.</SplitText>
         </h1>
 
+        <p className="hero-lead stagger">
+          <span className="hero-role">SWE Intern @ LeapBound AI</span>
+          <span className="lead-sep"> · </span>
+          CS + IS @ <span className="under">Carnegie Mellon</span>
+        </p>
+
         <p className="hero-sub stagger">
-          Software engineer building at the intersection of{' '}
-          <em>systems</em>, <em>AI</em>, and <em>security</em>. Studying CS
-          &amp; Information Systems at{' '}
-          <span className="under">Carnegie Mellon</span>.
+          Software engineer with experience across <em>full-stack</em>,{' '}
+          <em>systems</em>, <em>AI</em>, and <em>security</em>.
         </p>
 
         <div className="hero-meta mono stagger">
           <span>SNV, CA / PGH, PA</span>
           <span className="sep">✦</span>
-          <span>B.S. expected 05.2027</span>
+          <span>B.S. expected 05.2028</span>
         </div>
 
         <div className="hero-actions stagger">
           <a
             ref={btnRef}
-            href="#projects"
+            href="#experience"
             className="btn magnetic"
             data-hover="wide"
-            onClick={e => go(e, 'projects')}
+            onClick={e => go(e, 'experience')}
           >
             <span>see work</span>
             <span className="arrow">→</span>

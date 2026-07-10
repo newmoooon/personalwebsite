@@ -6,20 +6,21 @@ const EXPERIENCE = [
     org: 'LeapBound AI',
     date: 'Jun 2026 — Present',
     bullets: [
-      'Shipped a full-stack SEO-audit platform to production, crawling 100+ pages per site across 5 client brands.',
-      'Designed a 7-stage LLM pipeline with anti-hallucination guardrails — index-based outputs, deterministic validators, auto-retry — to keep recommendations grounded and evidence-cited.',
-      "Built the crawler and caching layer's domain-resolution logic, covered by a 49-test regression suite, to keep full-site audits reliable at scale.",
+      <>Independently designed and shipped two production, full-stack AI brand-intelligence engines targeted at small-to-medium Chinese companies entering the US market: an <strong>SEO</strong> audit surfacing technical fixes and content-credibility gaps, and a <strong>GEO</strong> audit scoring <strong>AI citation rate</strong> and <strong>share-of-voice</strong> against competitors, live at leapbound.ai.</>,
+      <>Built both tools end-to-end on Cloudflare and Supabase, owning the Python audit pipeline, FastAPI endpoints, <strong>database schema/RPCs</strong>, and Next.js frontend, including an <strong>LLM-guided crawler</strong> that curates each sitemap to relevant pages.</>,
+      <>Engineered the SEO audit&rsquo;s crawl-to-report pipeline: deep site-crawls and Google PageSpeed data feed a <strong>deterministic</strong> technical analyzer (duplicate titles, meta descriptions, schema) plus a credibility check that flags unsupported marketing claims, output as a prioritized 30-day plan with hour estimates.</>,
+      <>Implemented the GEO evaluation harness: generates market-aware buyer questions, extracts and verifies brand citations in LLM responses (blocking <strong>hallucinated</strong> competitor mentions), and computes a composite visibility score from citation rate, content readiness, and authority signals grounded in Wikipedia, Wikidata, and Common Crawl, surfacing false claims AI assistants make about client brands.</>,
     ],
-    tags: ['TypeScript', 'FastAPI', 'Cloudflare', 'Supabase'],
+    tags: ['Next.js', 'FastAPI', 'Cloudflare', 'Supabase', 'LLMs'],
   },
   {
     title: 'Software Engineer Intern',
     org: 'Howbe Inc. — WhoBe (Personal CRM)',
     date: 'Apr 2026 — Present',
     bullets: [
-      'Engineered the read/write consistency model for a Google Sheets-backed data layer — schema-aware reads, redesigned caching — to keep contact state reliably in sync.',
-      'Built a bulk aggregation API replacing O(n) per-contact requests with a single round-trip, powering real-time unread indicators and custom sort ordering.',
-      'Built a reactive client-side state layer driving live Flutter UI updates without manual reloads, backed by 100%-passing pytest and Flutter test suites.',
+      <>Built and shipped core features for WhoBe, a Flutter-based personal CRM app, spanning backend API design, data-layer consistency, and reactive frontend state management.</>,
+      <>Hardened the <strong>read/write consistency</strong> of a Google Sheets-backed data layer (dynamic schema-aware reads, redesigned caching), then built a <strong>bulk aggregation API</strong> that replaced O(n) per-contact requests with a <strong>single round-trip</strong>, powering live unread indicators and custom sort ordering.</>,
+      <>Developed a <strong>reactive client-side state layer</strong> (coalesced refresh, persisted read state) driving live Flutter UI updates without manual reloads, backed by <strong>~30 new unit and integration tests</strong> across pytest and the Flutter suite.</>,
     ],
     tags: ['Flutter', 'Python', 'Google Sheets API'],
   },
@@ -28,11 +29,11 @@ const EXPERIENCE = [
     org: 'CMU School of Computer Science × DoD',
     date: 'Sept 2024 — Present',
     bullets: [
-      'Built a pipeline extracting formal pre/postconditions from unstructured MITRE D3FEND text across 183 techniques via multi-stage LLM prompting — chain-of-thought, decomposition, RAG, cross-model validation across GPT and Gemini.',
-      'Translated natural-language conditions into first-order logic through divide-and-conquer decomposition, then used the Z3 SMT solver to formally verify state-to-state dependencies between defensive actions.',
-      'Reached 89.7% soundness and 98.9% completeness on the resulting knowledge base through predicate purification, inferred micro-implications, and iterative expert validation.',
+      <>Built the extraction pipeline for <strong>CyberKG</strong>, a cyber-defense knowledge graph enabling AI-generated incident-response playbooks across <strong>183 MITRE D3FEND</strong> techniques; co-authored a paper on this work submitted to the <strong>2026 IEEE Conference on Communications and Network Security (CNS)</strong>.</>,
+      <>Designed an LLM-based extraction methodology (<strong>Chain-of-Thought reasoning</strong>, ReAct-style decomposition), constraining the model to each technique&rsquo;s official text and requiring <strong>evidence-grounded</strong> justification per predicate to reduce <strong>hallucination</strong>.</>,
+      <>Achieved <strong>88.1% precondition</strong> and <strong>89.8% postcondition</strong> extraction accuracy across all 183 techniques, validated using an <strong>LLM cross validation</strong> and expert manual review.</>,
     ],
-    tags: ['Python', 'Z3', 'LLMs', 'MITRE D3FEND'],
+    tags: ['Python', 'LLMs', 'MITRE D3FEND', 'Knowledge Graph'],
   },
 ]
 
@@ -41,7 +42,7 @@ export default function Experience() {
     <section id="experience" className="section">
       <div className="section-inner">
         <header className="section-head reveal reveal-chars">
-          <span className="mono muted section-num">03 —</span>
+          <span className="mono muted section-num">01 —</span>
           <h2 className="section-title">
             <SplitText>Where I&rsquo;ve</SplitText>{' '}
             <span className="accent-word">

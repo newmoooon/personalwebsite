@@ -104,9 +104,9 @@ export default function Hero() {
         </p>
 
         <div className="hero-meta mono stagger">
-          <span>SNV, CA / PGH, PA</span>
+          <span>Bay Area, CA / PGH, PA</span>
           <span className="sep">✦</span>
-          <span>B.S. expected 05.2028</span>
+          <span>B.S. 05.2028</span>
         </div>
 
         <div className="hero-actions stagger">

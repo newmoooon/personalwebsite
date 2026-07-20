@@ -1,13 +1,14 @@
 import SplitText from './SplitText'
 
-const LANGUAGES = ['Python', 'C', 'Java', 'SQL', 'JavaScript', 'TypeScript', 'Dart', 'HTML/CSS', 'R', 'Ruby', 'Assembly']
-const TOOLS = ['Git', 'GitHub', 'CI/CD', 'Docker', 'FastAPI', 'RESTful APIs', 'React', 'Flutter', 'Rails', 'Redis', 'Supabase', 'Cloudflare']
+const LANGUAGES = ['Python', 'C', 'SQL (PostgreSQL)', 'Java', 'JavaScript', 'HTML/CSS', 'Ruby', 'Assembly', 'R']
+const TOOLS = ['React', 'Next.js', 'FastAPI', 'Flutter', 'Ruby on Rails', 'Git', 'Docker', 'CI/CD', 'Supabase', 'Cloudflare', 'REST APIs']
 const COURSEWORK = [
+  'Application + Database Design and Development',
   'Computer Systems',
+  'Software Engineering',
   'Artificial Intelligence',
-  'Database Development',
   'Functional Programming',
-  'Foundations of Software Engineering',
+  'Imperative Computation',
 ]
 
 export default function About() {

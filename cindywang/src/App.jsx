@@ -4,6 +4,7 @@ import Hero from './components/Home'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import WorkSamples from './components/WorkSamples'
 import Contact from './components/Contact'
 import FolderIntro from './components/FolderIntro'
 import ScrollProgress from './components/ScrollProgress'
@@ -12,6 +13,7 @@ import { initLenis, destroyLenis, pauseLenis } from './lib/scroll'
 const SECTIONS = [
   { id: 'home', label: 'index' },
   { id: 'experience', label: 'work' },
+  { id: 'work-samples', label: 'samples' },
   { id: 'projects', label: 'projects' },
   { id: 'about', label: 'about' },
   { id: 'contact', label: 'contact' },
@@ -80,6 +82,7 @@ export default function App() {
       <main>
         <Hero />
         <Experience />
+        <WorkSamples />
         <Projects />
         <About />
         <Contact />

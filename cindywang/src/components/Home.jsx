@@ -117,15 +117,16 @@ export default function Hero() {
             data-hover="wide"
             onClick={e => go(e, 'experience')}
           >
-            <span>see work</span>
+            <span>see experience</span>
             <span className="arrow">→</span>
           </a>
           <a
-            href="#contact"
-            className="btn ghost"
-            onClick={e => go(e, 'contact')}
+            href="#work-samples"
+            className="btn"
+            onClick={e => go(e, 'work-samples')}
           >
-            <span>get in touch</span>
+            <span>see works</span>
+            <span className="arrow">→</span>
           </a>
         </div>
       </div>

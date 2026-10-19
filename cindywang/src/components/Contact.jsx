@@ -12,7 +12,7 @@ export default function Contact() {
     <section id="contact" className="section contact">
       <div className="section-inner">
         <header className="section-head reveal reveal-chars">
-          <span className="mono muted section-num">04 —</span>
+          <span className="mono muted section-num">05 —</span>
           <h2 className="section-title">
             <SplitText>Say</SplitText>{' '}
             <span className="accent-word">

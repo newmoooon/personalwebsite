@@ -18,7 +18,7 @@ export default function About() {
         <div className="about-grid">
           <div className="about-left">
             <header className="section-head reveal reveal-chars">
-              <span className="mono muted section-num">03 —</span>
+              <span className="mono muted section-num">04 —</span>
               <h2 className="section-title">
                 <SplitText>About</SplitText>{' '}
                 <span className="accent-word">

@@ -106,7 +106,7 @@ export default function Projects() {
     <section id="projects" className="section">
       <div className="section-inner">
         <header className="section-head reveal reveal-chars">
-          <span className="mono muted section-num">02 —</span>
+          <span className="mono muted section-num">03 —</span>
           <h2 className="section-title">
             <SplitText>Selected</SplitText>{' '}
             <span className="accent-word">

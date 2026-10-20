@@ -7,6 +7,11 @@ const SAMPLES = [
     href: 'https://docs.google.com/document/d/1HcWYp77OlemTeZmd0k86oHDo17sChi8fj84mOGerlLQ/edit?tab=t.0',
   },
   {
+    title: 'Full Stack SEO and GEO Audit Tools',
+    category: 'Full stack & AI',
+    href: 'https://docs.google.com/document/d/1pHtN_oYyuRm7ivdFPDzI-ksmOBAxbTNPhVJCMXCMKq8/edit?usp=sharing',
+  },
+  {
     title: 'Mobile App WhoBe',
     category: 'Mobile development',
     href: 'https://docs.google.com/document/d/1rCtvhmF7tpYua3N_oOEiZdH_XnmlG0MpWKLoU_HUD6Q/edit?tab=t.0',

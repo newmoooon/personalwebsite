@@ -981,7 +981,7 @@ main { position: relative; z-index: 2; }
    projects
    ========================================================= */
 .samples-intro { margin: -12px 0 28px; max-width: 60ch; }
-.samples-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.samples-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .samples-grid > li { min-width: 0; }
 .sample-card {
   display: flex; flex-direction: column; height: 100%; min-height: 260px;

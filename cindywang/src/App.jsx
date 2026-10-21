@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Home'
 import About from './components/About'
@@ -41,7 +41,9 @@ function useClock() {
 
 export default function App() {
   const [active, setActive] = useState('home')
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(() =>
+    SECTIONS.some(section => `#${section.id}` === window.location.hash)
+  )
   const time = useClock()
   const onPreloaderDone = useCallback(() => setLoaded(true), [])
 
@@ -50,26 +52,29 @@ export default function App() {
     return () => destroyLenis()
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.documentElement.classList.toggle('is-loading', !loaded)
+    if (loaded) document.documentElement.classList.add('is-loaded')
     pauseLenis(!loaded)
   }, [loaded])
 
   // React mounts the sections while the intro locks scrolling. Apply the
   // URL fragment after the intro releases that lock, and on later changes.
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!loaded) return
     let frame
     const goToHash = () => {
       cancelAnimationFrame(frame)
-      frame = requestAnimationFrame(() => {
-        const id = window.location.hash.slice(1)
+      const scroll = () => {
+        const id = window.location.hash.slice(1) || 'home'
         if (!SECTIONS.some(section => section.id === id)) return
         const target = document.getElementById(id)
         const navHeight = document.querySelector('.nav')?.offsetHeight ?? 0
-        scrollToEl(target, { immediate: true, offset: -navHeight })
+        scrollToEl(target, { immediate: true, offset: -navHeight, updateUrl: false })
         setActive(id)
-      })
+      }
+      scroll()
+      frame = requestAnimationFrame(scroll)
     }
     goToHash()
     window.addEventListener('hashchange', goToHash)

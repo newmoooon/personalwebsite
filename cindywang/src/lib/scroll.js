@@ -22,8 +22,14 @@ export function pauseLenis(paused) {
   paused ? lenis.stop() : lenis.start()
 }
 
-export function scrollToEl(el, { immediate = false, offset = 0 } = {}) {
+export function scrollToEl(el, { immediate = false, offset = 0, updateUrl = true } = {}) {
   if (!el) return
+  if (updateUrl) {
+    const hash = el.id === 'home' ? '' : `#${el.id}`
+    if (window.location.hash !== hash) {
+      window.history.pushState(null, '', `${window.location.pathname}${window.location.search}${hash}`)
+    }
+  }
   if (lenis) {
     lenis.scrollTo(el, {
       offset,

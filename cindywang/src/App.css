@@ -711,6 +711,14 @@ main { position: relative; z-index: 2; }
   justify-content: center;
   flex-wrap: wrap;
 }
+.hero-social { margin-top: 20px; text-align: center; }
+.hero-social a {
+  display: inline-flex; align-items: center; gap: 9px;
+  color: var(--text-2); font-size: 14px;
+  transition: color 0.25s var(--ease);
+}
+.hero-social a:hover { color: var(--accent); }
+.hero-social a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 4px; }
 
 .btn {
   display: inline-flex; align-items: center; gap: 10px;

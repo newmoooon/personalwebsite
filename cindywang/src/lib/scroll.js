@@ -22,15 +22,19 @@ export function pauseLenis(paused) {
   paused ? lenis.stop() : lenis.start()
 }
 
-export function scrollToEl(el) {
+export function scrollToEl(el, { immediate = false, offset = 0 } = {}) {
   if (!el) return
   if (lenis) {
     lenis.scrollTo(el, {
-      offset: 0,
+      offset,
+      immediate,
       duration: 1.3,
       easing: t => 1 - Math.pow(1 - t, 4),
     })
   } else {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    window.scrollTo({
+      top: el.getBoundingClientRect().top + window.scrollY + offset,
+      behavior: immediate ? 'instant' : 'smooth',
+    })
   }
 }

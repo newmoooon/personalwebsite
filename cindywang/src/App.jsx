@@ -8,7 +8,7 @@ import WorkSamples from './components/WorkSamples'
 import Contact from './components/Contact'
 import FolderIntro from './components/FolderIntro'
 import ScrollProgress from './components/ScrollProgress'
-import { initLenis, destroyLenis, pauseLenis } from './lib/scroll'
+import { initLenis, destroyLenis, pauseLenis, scrollToEl } from './lib/scroll'
 
 const SECTIONS = [
   { id: 'home', label: 'index' },
@@ -53,6 +53,30 @@ export default function App() {
   useEffect(() => {
     document.documentElement.classList.toggle('is-loading', !loaded)
     pauseLenis(!loaded)
+  }, [loaded])
+
+  // React mounts the sections while the intro locks scrolling. Apply the
+  // URL fragment after the intro releases that lock, and on later changes.
+  useEffect(() => {
+    if (!loaded) return
+    let frame
+    const goToHash = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        const id = window.location.hash.slice(1)
+        if (!SECTIONS.some(section => section.id === id)) return
+        const target = document.getElementById(id)
+        const navHeight = document.querySelector('.nav')?.offsetHeight ?? 0
+        scrollToEl(target, { immediate: true, offset: -navHeight })
+        setActive(id)
+      })
+    }
+    goToHash()
+    window.addEventListener('hashchange', goToHash)
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('hashchange', goToHash)
+    }
   }, [loaded])
 
   useEffect(() => {
